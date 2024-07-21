@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="page5css.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="frontTop">
+        <img src="vitlogo.jpg" alt="vitlogo" class="vitlogo">
+        <span class="FallSem"><p>Fall Semester Course Registration</p></span>
+        <br>
+        <span class="campus"><p>VIT - Vellore Campus</p></span>
+    </div>
+    <div id="regInfo">
+        <p>Registration Number : <span id="reg"></span> - (Study System : CBCS - Course System: CBSC)</p>
+    </div>
+    <div id="home">
+        <button onclick="Home()">Home</button>
+    </div>
+    <div id="view" onclick="view()">
+        <button >view/Modify</button>
+    </div>
+    <div id="SignOut">
+        <button onclick="signOut()">SignOut</button>
+    </div>
+    <div id="fc">
+        <b>Foundation Core</b>
+    </div>
+
+    <div id="nextbtn">
+        <button id="angle"><i class="fa-solid fa-angles-left"></i></button>
+        <button id="angle" class="one">1</button>
+        <button id="angle" ><i class="fa-solid fa-angles-right"></i></button>
+    </div>
+
+    <div id="tableContent">
+        <table>
+            <thead id="tabelHead">
+                <tr>
+                    <th>COURSE DETAIL</th>
+                    <th>L</th>
+                    <th>T</th>
+                    <th>P</th>
+                    <th>J</th>
+                    <th>CREDIT</th>
+                    <th>PRE-REQUISITE</th>
+                    <th>CO-REQUISITE</th>
+                    <th>ANTI-REQUISITE</th>
+                    <th>STATUS</th>
+                    <th>PROCEED</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                <td>ICSE103P - Computer Programming</td>
+                <td>1</td>
+                <td>0</td>
+                <td>4</td>
+                <td>0</td>
+                <td>3.0</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td id="status1"></td>
+                <td id="procee"></td>
+                </tr>
+
+                <tr>
+                    <td>IENG102P - Technical Report Writing LO</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>0</td>
+                    <td>2.0</td>
+                    <td>
+                        IENG101L,
+                        <br>
+                        IENG101P
+                    </td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td id="status2"></td>
+                    <td id="procee1"></td>
+                    </tr>
+                    <tr>
+                        <td>IMAT201L - Complex Variable And Linear Algebra - Th</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>2</td>
+                        <td>0</td>
+                        <td>4.0</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td id="status3"></td>
+                        <td id="procee2"></td>
+                        </tr>
+                        <tr>
+                            <td>ISWE102L - Data Structures And Algrothium - TH </td>
+                            <td>3</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>4.0</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td id="status4"></td>
+                            <td id="procee3"></td>
+                            </tr>
+
+                            <tr>
+                                <td>ISWE206P - Web Techonology -Th</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>4.0</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td id="status5"></td>
+                                <td id="procee4"></td>
+                                </tr>
+            </tbody>
+
+        </table>
+    </div>
+
+    <div id="nextbtn" class="nextBtn">
+        <button id="angle"><i class="fa-solid fa-angles-left"></i></button>
+        <button id="angle" class="one">1</button>
+        <button id="angle" ><i class="fa-solid fa-angles-right"></i></button>
+    </div>
+
+    <div id="go">
+        <button onclick="goBack()">Go Back</button>
+    </div>
+
+
+    <script>
+        let button = document.createElement('button')
+        button.innerHTML = "Proceed"
+        button.id = "myButton"
+        button.addEventListener("click",() =>{
+            window.location.href = "page6.html"
+        })
+
+        let button1 = document.createElement('button')
+        button1.innerHTML = "Proceed"
+        button1.id = "myButton"
+        button1.addEventListener("click",() =>{
+            window.location.href = "english.html"
+        })
+
+        let container1 = document.querySelector('#procee1')
+        container1.appendChild(button1)
+
+        let container = document.querySelector('#procee')
+        container.appendChild(button)
+
+        const regNum = document.getElementById('reg')
+        const  regNumber = localStorage.getItem('regNum')
+        regNum.innerHTML = regNumber
+
+        let proce = document.querySelector("#procee")
+        let status = document.querySelector("#status1");
+        if(localStorage.getItem("javaFaculty")){
+            proce.innerHTML = "-"
+            status.innerHTML = "Registered";
+            status.style.color = "#01B704";
+            status.style.fontWeight = "bolder"
+        }
+
+        let proce2 = document.querySelector("#procee1")
+        let status2 = document.querySelector("#status2");
+        if(localStorage.getItem("englishFaculty")){
+            proce2.innerHTML = "-"
+            status2.innerHTML = "Registered";
+            status2.style.color = "#01B704";
+            status2.style.fontWeight = "bolder"
+        }
+
+        let button2 = document.createElement('button')
+        button2.innerHTML = "Proceed"
+
+        let container2 = document.querySelector('#procee2')
+        container2.appendChild(button2)
+
+        let proce3 = document.querySelector("#procee2")
+        let status3 = document.querySelector("#status3");
+
+        button2.id = "myButton"
+        button2.addEventListener("click",() =>{
+            window.location.href = "maths.html"
+        })
+
+        if(localStorage.getItem("MathFaculty")){
+            proce3.innerHTML = "-"
+            status3.innerHTML = "Registered";
+            status3.style.color = "#01B704"
+            status3.style.fontWeight = "bolder"
+        }
+
+        let button3 = document.createElement('button')
+        button3.innerHTML = "Proceed"
+
+        let container3 = document.querySelector('#procee3')
+        container3.appendChild(button3)
+
+        let proce4 = document.querySelector("#procee3")
+        let status4 = document.querySelector("#status4");
+
+        button3.id = "myButton"
+        button3.addEventListener("click",() =>{
+            window.location.href = "dsa.html"
+        })
+
+        if(localStorage.getItem("dsaFaculty")){
+            proce4.innerHTML = "-"
+            status4.innerHTML = "Registered";
+            status4.style.color = "#01B704"
+            status4.style.fontWeight = "bolder"
+        }
+
+        let button4 = document.createElement('button')
+        button4.innerHTML = "Proceed"
+
+        let container4 = document.querySelector('#procee4')
+        container4.appendChild(button4)
+
+        let proce5 = document.querySelector("#procee4")
+        let status5 = document.querySelector("#status5");
+
+        button4.id = "myButton"
+        button4.addEventListener("click",() =>{
+            window.location.href = "web.html"
+        })
+
+        if(localStorage.getItem("webFaculty")){
+            proce5.innerHTML = "-"  
+            status5.innerHTML = "Registered";
+            status5.style.color = "#01B704"
+            status5.style.fontWeight = "bolder"
+        }
+
+        function view(){
+            window.location.href = "viewAndModify.html"
+        }
+        
+        function signOut(){
+            window.location.href = "index.html"
+        }
+
+        function Home(){
+            window.location.href = "page3.html"
+        }
+
+        function goBack(){
+            window.location.href = "page4.html"
+        }
+
+
+        
+
+    </script>   
+</body>
+</html>

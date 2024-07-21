@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="page3css.css">
+</head>
+<body>
+    <div class="frontTop">
+        <img src="vitlogo.jpg" alt="vitlogo" class="vitlogo">
+        <span class="FallSem"><p>Fall Semester Course Registration</p></span>
+        <br>
+        <span class="campus"><p>VIT - Vellore Campus</p></span>
+    </div>
+
+    <div id="regInfo">
+        <p>Registration Number : <span id="reg"></span> - (Study System : CBCS - Course System: CBSC)</p>
+    </div>
+    
+    <div id="pad">
+        <table id="table">
+            <thead>
+                <tr>
+                    <th colspan="2">PROGRESS INFO</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td id="h2">Registration Schedule</td>
+                    <td id="h2">15-July 6.00 PM - 6.45 PM</td>
+                </tr>
+                <tr>
+                    <td id="h2">whishlist Completed?</td>
+                    <td id="h2">Not Applicable</td>
+                </tr>
+
+                <tr>
+                    <td id="h2">Your Academics Year</td>
+                    <td id="h2">2023</td>
+                </tr>
+                <tr>
+                    <td id="h2">Program Specialization</td>
+                    <td id="h2">MIS Software Engineering</td>
+                </tr>
+                <tr>
+                    <td id="h2">Program Mode</td>
+                    <td id="h2">regular</td>
+                </tr>
+
+            </tbody>
+        </table>
+
+    </div>
+
+    <div id="capsa">
+        <img src="capsa.jpg" alt="" width="150">
+    </div>
+    <form action="" id="form">
+        <div id="input">
+            <input type="text" required>
+        </div>
+        <div id="Proceed">
+            <button type="submit">Proceed</button>
+        </div>
+        
+    </form>
+
+    <div id="SignOut"> 
+        <button onclick="signOut()">Sign Out </button>
+    </div>
+
+    <script>
+        const regNum = document.getElementById('reg')
+        const  regNumber = localStorage.getItem('regNum')
+        console.log(regNumber)
+        regNum.innerHTML = regNumber
+
+        const Proceed = document.querySelector('#form')
+        Proceed.addEventListener("submit",(e) =>{
+            e.preventDefault()
+            window.location.href = "page4.html"
+        }
+    )
+    function signOut(){
+        window.location.href = 'index.html'
+    }
+    </script>
+</body>
+</html>

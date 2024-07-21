@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="viewAndModifycss.css">
+</head>
+<body>
+    <div class="frontTop">
+        <img src="vitlogo.jpg" alt="vitlogo" class="vitlogo">
+        <span class="FallSem"><p>Fall Semester Course Registration</p></span>
+        <br>
+        <span class="campus"><p>VIT - Vellore Campus</p></span>
+    </div>
+    <div id="regInfo">
+        <p>Registration Number : <span id="reg"></span> - (Study System : CBCS - Course System: CBSC)</p>
+    </div>
+
+    <div id="vm">
+        <h2>View And Modify Page</h2>
+    </div>
+
+    <div id="table1Container">
+        <table id="table1">
+            <thead id="thead1">
+                <tr >
+                    <th>Course Detials</th>
+                    <th>Slot</th>
+                    <th>Credits</th>
+                    <th>Faculty Name</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody id="tbody1">
+
+            </tbody>
+        </table>
+    </div>
+
+    <div>
+        <h3 id="regCr">Registered credit(s)</h3>
+    </div>
+
+    <div id="table2Container">
+        <table id="table2">
+            <thead id="thead2">
+                <tr id="tr2">
+                    <th>CGPA : 8.27</th>
+                    <th>Credits</th>
+                    <th>Course</th>
+                </tr>
+            </thead>
+            <tbody id="thbody2">
+                <tr>
+                    <td>Minimum</td>
+                    <td>16</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>Maximum</td>
+                    <td>27</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>Registered(Including Non-Credit Category)</td>
+                    <td id="creditsRegistered"></td>
+                    <td id="coursesRegistered"></td>
+                </tr>
+                <tr>
+                    <td>Non-Credit Category</td>
+                    <td>0.0</td>
+                    <td>0</td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+
+    <div id="goBackContainer">
+        <button id="goBack" onclick="goBack()">Go Back</button>
+    </div>
+
+
+    <script>
+        const regNum = document.getElementById('reg')
+        const  regNumber = localStorage.getItem('regNum')
+        regNum.innerHTML = regNumber
+
+        let Credits = 0
+        let course = 0
+
+        let tbody1 = document.querySelector('#table1 #tbody1')
+        
+        if(localStorage.javaFaculty){
+            let trJava = document.createElement('tr')
+            let tdJavaCd = document.createElement('td')
+            let tdJavaS = document.createElement('td')
+            let tdJavaCr = document.createElement('td')
+            let tdJavaFac = document.createElement('td')
+            let tdJavaSt = document.createElement('td')
+
+            tdJavaCd.innerHTML = "ICSE103E - Computer Programming : Java"
+            tdJavaS.innerHTML = "TAA2"
+            tdJavaCr.innerHTML = 3
+            tdJavaFac.innerHTML = localStorage.getItem('javaFaculty')
+            tdJavaSt.innerHTML = "Registered"
+            tdJavaSt.style.color = "green"
+            tdJavaSt.style.fontWeight = "bolder"
+            Credits +=3
+            course +=1
+
+            trJava.appendChild(tdJavaCd);
+            trJava.appendChild(tdJavaS);
+            trJava.appendChild(tdJavaCr);
+            trJava.appendChild(tdJavaFac);
+            trJava.appendChild(tdJavaSt);
+
+            tbody1.appendChild(trJava);
+        }
+
+        if(localStorage.englishFaculty){
+            let trJava = document.createElement('tr')
+            let tdJavaCd = document.createElement('td')
+            let tdJavaS = document.createElement('td')
+            let tdJavaCr = document.createElement('td')
+            let tdJavaFac = document.createElement('td')
+            let tdJavaSt = document.createElement('td')
+
+            tdJavaCd.innerHTML = "IENG102P - Techinical Report riting"
+            tdJavaS.innerHTML = "LAB"
+            tdJavaCr.innerHTML = 2
+            tdJavaFac.innerHTML = localStorage.getItem('englishFaculty')
+            tdJavaSt.innerHTML = "Registered"
+            tdJavaSt.style.color = "green"
+            tdJavaSt.style.fontWeight = "bolder"
+            Credits +=2
+            course +=1
+
+            trJava.appendChild(tdJavaCd);
+            trJava.appendChild(tdJavaS);
+            trJava.appendChild(tdJavaCr);
+            trJava.appendChild(tdJavaFac);
+            trJava.appendChild(tdJavaSt);
+
+            tbody1.appendChild(trJava);
+        }
+
+        if(localStorage.MathFaculty){
+            let trJava = document.createElement('tr')
+            let tdJavaCd = document.createElement('td')
+            let tdJavaS = document.createElement('td')
+            let tdJavaCr = document.createElement('td')
+            let tdJavaFac = document.createElement('td')
+            let tdJavaSt = document.createElement('td')
+
+            tdJavaCd.innerHTML = "IMAT201L - Complex Variable And Linear Algebra"
+            tdJavaS.innerHTML = "C1"
+            tdJavaCr.innerHTML = 4
+            tdJavaFac.innerHTML = localStorage.getItem('MathFaculty')
+            tdJavaSt.innerHTML = "Registered"
+            tdJavaSt.style.color = "green"
+            tdJavaSt.style.fontWeight = "bolder"
+            Credits +=4
+            course +=1
+
+            trJava.appendChild(tdJavaCd);
+            trJava.appendChild(tdJavaS);
+            trJava.appendChild(tdJavaCr);
+            trJava.appendChild(tdJavaFac);
+            trJava.appendChild(tdJavaSt);
+
+            tbody1.appendChild(trJava);
+        }
+
+        if(localStorage.dsaFaculty){
+            let trJava = document.createElement('tr')
+            let tdJavaCd = document.createElement('td')
+            let tdJavaS = document.createElement('td')
+            let tdJavaCr = document.createElement('td')
+            let tdJavaFac = document.createElement('td')
+            let tdJavaSt = document.createElement('td')
+
+            tdJavaCd.innerHTML = "ISWE102P - Data Structures And Algorithms"
+            tdJavaS.innerHTML = "A2"
+            tdJavaCr.innerHTML = 4
+            tdJavaFac.innerHTML = localStorage.getItem('dsaFaculty')
+            tdJavaSt.innerHTML = "Registered"
+            tdJavaSt.style.color = "green"
+            tdJavaSt.style.fontWeight = "bolder"
+            Credits +=4
+            course +=1
+
+            trJava.appendChild(tdJavaCd);
+            trJava.appendChild(tdJavaS);
+            trJava.appendChild(tdJavaCr);
+            trJava.appendChild(tdJavaFac);
+            trJava.appendChild(tdJavaSt);
+
+            tbody1.appendChild(trJava);
+        }
+         
+        if(localStorage.webFaculty){
+            let trJava = document.createElement('tr')
+            let tdJavaCd = document.createElement('td')
+            let tdJavaS = document.createElement('td')
+            let tdJavaCr = document.createElement('td')
+            let tdJavaFac = document.createElement('td')
+            let tdJavaSt = document.createElement('td')
+
+            tdJavaCd.innerHTML = "ISWE206L - Web Technologies"
+            tdJavaS.innerHTML = "B2"
+            tdJavaCr.innerHTML = 4
+            tdJavaFac.innerHTML = localStorage.getItem('webFaculty')
+            tdJavaSt.innerHTML = "Registered"
+            tdJavaSt.style.color = "green"
+            tdJavaSt.style.fontWeight = "bolder"
+            Credits +=4
+            course +=1
+
+            trJava.appendChild(tdJavaCd);
+            trJava.appendChild(tdJavaS);
+            trJava.appendChild(tdJavaCr);
+            trJava.appendChild(tdJavaFac);
+            trJava.appendChild(tdJavaSt);
+
+            tbody1.appendChild(trJava);
+        }
+
+
+        const table2 = document.querySelector('#table2 #thbody2');
+
+        // let x = 1
+        //     const tr2 = document.createElement('tr')
+
+        //     const td21 = document.createElement('td')
+        //     const td22 = document.createElement('td')
+        //     const td23 = document.createElement('td')
+
+        const crR = document.querySelector('#creditsRegistered')
+        const coR = document.querySelector('#coursesRegistered')
+        crR.innerHTML = Credits
+        coR.innerHTML = course
+
+        function goBack(){
+            window.location.href = "page4.html"
+        }
+
+    </script>
+</body>
+</html>

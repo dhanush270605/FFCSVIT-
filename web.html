@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="page6css.css">
+    <style>
+        /* Modal styles */
+        .modal {
+            display: none; 
+            position: fixed; 
+            z-index: 1; 
+            left: 0;
+            top: 0;
+            width: 100%; 
+            height: 100%; 
+            overflow: auto; 
+            background-color: rgb(0,0,0); 
+            background-color: rgba(0,0,0,0.4); 
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto; 
+            height: 50vh;
+            padding: 20px;
+            border: 1px solid #888;
+            box-shadow: 1px 5px 5px 2px rgba(79, 66, 66, 0.475);
+            width: 40%;
+            margin-bottom: 200px; 
+            padding: 30px;
+        }
+
+        #modalMessage{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+            font-size: 15px;
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        #img1{
+            margin-left: 130px;
+            margin-bottom: 20px;
+            width: 300px;
+        }
+
+        .close, .confirm {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            position: relative;
+            left: 140px;
+            box-shadow: 1px 1px 1px 1px black;
+            margin: 10px 0;
+            border: none;
+            cursor: pointer;
+            width: 50%;
+            opacity: 0.9;
+            margin-top: 0px;
+        }
+
+        .close:hover, .confirm:hover {
+            opacity: 1;
+            background-color: skyblue;
+            transform:translateY(-3px);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="frontTop">
+        <img src="vitlogo.jpg" alt="vitlogo" class="vitlogo">
+        <span class="FallSem"><p>Fall Semester Course Registration</p></span>
+        <br>
+        <span class="campus"><p>VIT - Vellore Campus</p></span>
+    </div>
+    <div id="regInfo">
+        <p>Registration Number : <span id="reg"></span> - (Study System : CBCS - Course System: CBSC)</p>
+    </div>
+
+    <div id="courseRegestration">
+        <p>Course Registration</p>
+    </div>
+
+    <div id="topTable">
+        <table id="table1">
+            <thead>
+                <tr>
+                    <th>Course Code</th>
+                    <th id="title">course Title</th>
+                    <th>Course Type</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>ISWE206L</td>
+                    <td id="title">Web Techonologies</td>
+                    <td>ELT</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <br>
+    <br>
+    <form id="countList" method="post" name="countList" onsubmit="saveSelection(event)">
+        <div id="FacultyTable">
+            <table id="table2">
+                <thead>
+                    <tr>
+                        <th>Slot</th>
+                        <th>Venue</th>
+                        <th>Session</th>
+                        <th id="FacultyName">Faculty</th>
+                        <th>Available</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>B2+TB2</td>
+                        <td>SJT101</td>
+                        <td>B2</td>
+                        <td id="FacultyName" class="FacultyName1">Vijayan R</td>
+                        <td><input type="radio" name="seats" value="Vijayan R" session="TAA2" required> <label id="seatCountVijayanR">70</label></td>
+                    </tr>
+                    <tr>
+                        <td>B1+TB1</td>
+                        <td>SJT402</td>
+                        <td>B1</td>
+                        <td id="FacultyName" class="FacultyName1">Mohan Raj G</td>
+                        <td><input type="radio" name="seats" value="Mohan Raj G" session="TAA1" required> <label id="seatCountMohanRajG">70</label></td>
+                    </tr>
+                    <tr>
+                        <td>B2+TB2</td>
+                        <td>SJT224</td>
+                        <td>B2</td>
+                        <td id="FacultyName" class="FacultyName1">Mareeswari G</td>
+                        <td><input type="radio" name="seats" value="Mareeswari G" session="TAA2" required> <label id="seatCountMareeswariG">70</label></td>
+                    </tr>
+                    <tr>
+                        <td>B1+TB1</td>
+                        <td>SJT603</td>
+                        <td>B1</td>
+                        <td id="FacultyName" class="FacultyName1">Brindha K</td>
+                        <td><input type="radio" name="seats" value="Brindha K" session="TAA1" required> <label id="seatCountBrindha K">70</label></td>
+                    </tr>
+                    <tr id="OptionRegular">
+                        <td colspan="2">Course Option</td>
+                        <td colspan="3" id="regular2"><input type="radio" name="regular1" id="regular1" required><label for="regular1">Regular</label></td>
+                    </tr>
+                    <tr>
+                        <td id="LBbutton" colspan="5">
+                            <button id="proceed" class="inline" type="submit">Register</button>
+                            <button id="goBack" class="inline" type="button" onclick="goBackButton()">Go Back</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </form>
+
+    <!-- Modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <img id="img1" src="regTick1.jpg" alt="" width="150">
+            <p id="modalMessage">Hello</p>
+            <button class="confirm" onclick="confirmSelection()">Confirm</button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Load initial seat counts from local storage or set default values
+            const faculties = ["Vijayan R", "Kuruva Lakshmanna", "Mareeswari G", "Brindha K"];
+            faculties.forEach(faculty => {
+                const seatCount = localStorage.getItem(`webseatCount_${faculty}`) || 70;
+                document.getElementById(`seatCount${faculty.replace(/ /g, '')}`).textContent = seatCount;
+            });
+
+            const regNum = document.getElementById('reg');
+            const regNumber = localStorage.getItem('regNum');
+            regNum.innerHTML = regNumber;
+        });
+
+        function saveSelection(event) {
+            event.preventDefault();
+            const selectedFaculty = document.querySelector('input[name="seats"]:checked').value;
+            const seatCountLabel = document.getElementById(`seatCount${selectedFaculty.replace(/ /g, '')}`);
+            let seatCount = parseInt(seatCountLabel.textContent);
+
+            if (seatCount > 0) {
+                seatCount -= 1;
+                seatCountLabel.textContent = seatCount;
+                localStorage.setItem(`webseatCount_${selectedFaculty}`, seatCount);
+                localStorage.setItem('webFaculty', selectedFaculty);
+
+                // Show the modal with the confirmation message
+                const modal = document.getElementById("myModal");
+                const modalMessage = document.getElementById("modalMessage");
+                modalMessage.textContent = `Selected faculty: ${selectedFaculty} has been saved. Remaining seats: ${seatCount}`;
+                modal.style.display = "block";
+            } else {
+                alert(`No seats available for faculty: ${selectedFaculty}`);
+            }
+        }
+
+        function confirmSelection(){
+            // Close the modal and redirect to page5.html
+            const modal = document.getElementById("myModal");
+            modal.style.display = "none";
+            window.location.href = 'page5.html';
+        }
+
+        function goBackButton(){
+            window.location.href ="page5.html"
+        }
+    </script>
+
+</body>
+</html>

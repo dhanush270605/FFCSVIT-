@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet" href="page2css.css">
+
+</head>
+<body>
+    <div class="frontTop">
+        <img src="vitlogo.jpg" alt="vitlogo" class="vitlogo">
+        <span class="FallSem"><p>Fall Semester Course Registration</p></span>
+        <br>
+        <span class="campus"><p>VIT - Vellore Campus</p></span>
+    </div>
+
+    <div id="regInfo">
+        <p>Registration Number : <span id="reg"></span> - (Study System : CBCS - Course System: CBSC)</p>
+    </div>
+
+    <div><h2 id="donot">Do Not Skip Reading This Important Instruction </h2></div>
+
+    <div class="info">
+        <ul>
+            <li>An OTP will be Sent to Your student email ID, and a notification will be sent to the VITian App for
+                each course modification or deletion.
+            </li>
+            <li>
+                This should <span id="blueWords"> not Share their credentials</span> with their friends. The <span id="blueWords">
+                    University does not take any responsibilities if their whishlist Registration are altered/deleted.
+                </span>
+            </li>
+            <li>For <span id="blueWords">issues related to course , </span>please contact Your <span id="blueWords">
+                Head of the Department.
+            </span></li>
+            <li>For <span id="wordsBold">Any further clarification please contact </span> <span id="blueWords"><a href="mailto:helpdesk.acad@vit.ac.in">helpdesk.acad@vit.ac.in</a></span></li>
+        </ul>
+    </div>
+
+    <div id="secCount">
+        <p>This Will Re Directed After <span id="seconds">5</span> second(s)...</p>
+    </div>
+
+    <script>
+        const regNum = document.getElementById('reg')
+        const  regNumber = localStorage.getItem('regNum')
+        console.log(regNumber)
+
+        regNum.innerHTML = regNumber
+
+        let seconds = document.getElementById('seconds')
+
+        let index = 5
+
+        function* TenSec(){
+            if(index == -1){
+                index = 5
+            }
+            while(true){
+                yield index--
+            }
+        }
+
+        function tenSecond(){
+            const gen = TenSec()
+            seconds.innerHTML = gen.next().value
+
+        }
+        setInterval(()=>tenSecond(),1000)
+
+        function reDirect(){
+            window.location.href='page3.html'
+        }
+
+        setTimeout(()=>reDirect(),6000)
+
+    </script>
+</body>
+</html>

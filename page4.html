@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="page4css.css">
+</head>
+<body>
+    <div class="frontTop">
+        <img src="vitlogo.jpg" alt="vitlogo" class="vitlogo">
+        <span class="FallSem"><p>Fall Semester Course Registration</p></span>
+        <br>
+        <span class="campus"><p>VIT - Vellore Campus</p></span>
+    </div>
+
+    <div id="regInfo">
+        <p>Registration Number : <span id="reg"></span> - (Study System : CBCS - Course System: CBSC)</p>
+    </div>
+
+    <div id="home">
+        <button onclick="Home()">Home</button>
+    </div>
+    <div id="view" onclick="view()">
+        <button >view/Modify</button>
+    </div>
+    <div id="SignOut">
+        <button onclick="signOut()">SignOut</button>
+    </div>
+
+    <div id="couseList">
+        <p>Course Registration Option</p>
+        <form action="" id="couseForm" method="post">
+            <input type="radio" name="couse" id="compulsary" required>
+            <label for="compulsary">Compulsary Cousr(COMP)</label>
+            <br>
+            <input type="radio" name="couse" id="Foundation" required>
+            <label for="Foundation">Foundation Core(FC)</label>
+            <br>
+            <input type="radio" name="couse" id="Discipline" required>
+            <label for="Discipline">Discipline Core(DC)</label>
+            <br>
+            <input type="radio" name="couse" id="Elective" required>
+            <label for="Elective">Discipline Elective(DE)</label>
+            <br>
+            <input type="radio" name="couse" id="Project" required>
+            <label for="Project">Project And Intenship</label>
+            <br>
+            <input type="radio" name="couse" id="Open" required>
+            <label for="Open">Open Elective(OE)</label>
+            <br>
+            <input type="radio" name="couse" id="Open" required>
+            <label for="Open">Bridge Course(BC)</label>
+            <br>
+            <input type="radio" name="couse" id="Open" required>
+            <label for="Open">Non - gradal Core Requirments</label>
+            <br>
+            <input type="radio" name="couse" id="Open" required>
+            <label for="Open">Discipline-Linked Engineering</label>
+            <br>
+            <input type="radio" name="couse" id="Open" required>
+            <label for="Open">Re-Registration</label>
+            <br>
+            <button id="prceed1">Proceed</button>
+        </form>
+    </div>
+
+    <script>
+        const regNum = document.getElementById('reg')
+        const  regNumber = localStorage.getItem('regNum')
+        console.log(regNumber)
+        regNum.innerHTML = regNumber
+
+        const Proceed = document.querySelector("#couseForm")
+        Proceed.addEventListener("submit",(e) =>{
+            e.preventDefault()
+            window.location.href= "page5.html"
+        })
+
+        function signOut(){
+            window.location.href = "index.html"
+        }
+
+        function view(){
+            window.location.href = "viewAndModify.html"
+        }
+
+        function Home(){
+            window.location.href = "page3.html"
+        }
+        
+    </script>
+</body>
+</html>

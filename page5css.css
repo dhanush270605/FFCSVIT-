@@ -1,0 +1,230 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    overflow-x: hidden; /* Prevent horizontal scrollbar */
+}
+
+#regInfo{
+    margin-top: 20px;
+    background-color:rgba(128, 128, 128, 0.265);
+    width: 100vw;
+    height: 20px;
+    display: flex;
+    justify-self: center;
+    align-items: center;
+}
+
+.frontTop {
+    background-color: rgb(255, 255, 255);
+    position: fixed;
+    z-index: 20;
+    width: 100vw;
+    height: 12vh;
+    box-shadow: 1px 1px 10px 1px gray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+}
+
+.vitlogo {
+    width: 70px;
+    position: absolute;
+    left: 20px;
+    top: 10px;
+}
+
+.frontTop span {
+    font-size: 20px;
+}
+
+.FallSem p {
+    font-size: 30px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.campus p {
+    font-weight: bold;
+    margin: 0;
+}
+
+#home button{
+    background-color: rgba(11, 158, 11, 0.721);
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color:white;
+    font-weight: bolder;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    border-radius: 10px;
+    margin-left: 10vw;
+    position: relative;
+    top: 50px;
+}
+
+#view button{
+    background-color: rgb(252, 202, 0);
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color:white;
+    font-weight: bolder;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    border-radius: 10px;
+    margin-left: 43vw;
+    position: relative;
+    top: 20px;
+}
+#SignOut button{
+    background-color: rgb(252, 55, 0);
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color:white;
+    font-weight: bolder;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    border-radius: 10px;
+    margin-left: 80vw;
+    position: relative;
+    bottom: 20px;
+
+}
+#angle{
+    width: 25px;
+    height: 25px;
+}
+
+#nextbtn {
+    margin-left: 100px;
+    margin-bottom: 30px;
+
+}
+#nextbtn button:hover {
+    background-color: aqua;
+    transform: translateY(-5%);
+}
+
+#fc{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+#tableContent{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+table{
+    border-collapse: collapse;
+}
+
+th ,td{
+    text-align: center;
+    border: 2px solid black;
+    white-space: nowrap;
+}
+thead{
+    background: rgb(19,195,143);
+    background: linear-gradient(90deg, rgba(19,195,143,1) 0%, rgb(0, 141, 197) 0%, rgba(0,33,105,1) 100%);
+    color: white;
+}
+th{
+    padding-left: 20px;
+    padding-right: 20px;
+    height: 40px;
+}
+
+td{
+    text-align: left;
+    padding: 12px;
+    margin: 100px;
+}
+
+tbody tr:nth-child(even){
+    background-color:rgba(138, 138, 138, 0.199);
+}
+
+.one{
+    background-color: rgba(20, 136, 244, 0.874);
+    border: none;
+}
+
+#myButton{
+    background-color: rgb(73, 130, 252);
+    color: white;
+    margin-left: 7px;
+    height: 30px;
+    width: 100px;
+    border-radius: 5px;
+    border: none;
+}
+
+#myButton1{
+    background-color: rgb(73, 130, 252);
+    color: white;
+    margin-left: 7px;
+    margin-bottom: 20px;
+    height: 30px;
+    width: 100px;
+    border-radius: 5px;
+    border: none;
+}
+
+.nextBtn{
+    margin-top: 30px;
+}
+
+#go button{
+    background-color: black;
+    color: white;
+    height: 32px;
+    width: 80px;
+    border-radius: 5px;
+    margin-left: 90vw;
+    border: none;
+}
+
+#home button:hover,#view button:hover,#SignOut button:hover{
+    background-color: brown;
+    box-shadow: 2px 2px 2px 2px gray;
+    transform: rotateY(-0.1turn);
+}
+
+#go button:hover{
+    box-shadow: 2px 2px 2px 2px gray;
+    background-color:brown ;
+    transform: translateY(-5px);
+}
+
+#go button:active{
+    background-color: red;
+    transform: rotateX(10px);
+}
+
+#myButton:hover{
+    background-color:darkorange;
+    color: black;
+    box-shadow: 3px 3px 3px 3px gray;
+    transform: translateY(-2px);
+}
+
+#myButton:active{
+    background-color: red;
+    transform: translateY(-10px);
+    
+}

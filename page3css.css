@@ -1,0 +1,134 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    overflow-x: hidden; /* Prevent horizontal scrollbar */
+}
+
+#regInfo{
+    margin-top: 20px;
+    background-color:rgba(128, 128, 128, 0.265);
+    width: 100vw;
+    height: 20px;
+    display: flex;
+    justify-self: center;
+    align-items: center;
+}
+
+.frontTop {
+    background-color: rgb(255, 255, 255);
+    position: fixed;
+    z-index: 20;
+    width: 100vw;
+    height: 12vh;
+    box-shadow: 1px 1px 10px 1px gray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+}
+
+.vitlogo {
+    width: 70px;
+    position: absolute;
+    left: 20px;
+    top: 10px;
+}
+
+.frontTop span {
+    font-size: 20px;
+}
+
+.FallSem p {
+    font-size: 30px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.campus p {
+    font-weight: bold;
+    margin: 0;
+}
+
+#table{
+    padding: 0px;
+    margin-top: 30px;
+    margin-left: 25vw;
+    /* border: 2px solid black; */
+    padding: 10px;
+    font-size: 20px;
+    width: 800px;
+    height: 300px;
+}
+tr:nth-child(even){
+    background-color: rgba(162, 154, 142, 0.297);
+}
+tr:nth-child(odd){
+    background-color: rgba(182, 216, 216, 0.317);
+}
+#h2{
+    padding-left: 20px;
+}
+tr:hover{
+    background-color: rgba(88, 158, 164, 0.836);
+    color: aliceblue;
+}
+th{
+    text-decoration: underline;
+}
+thead th{
+    padding-bottom: 15px;
+    padding-top: 15px;
+}
+#capsa{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+
+}
+input{
+    margin-left: 43vw;
+    margin-top: 20px;
+    width: 200px;
+    height: 30px;
+}
+
+#Proceed button{
+    background-color: rgba(40, 181, 44, 0.961);
+    width: 90px;
+    height: 30px;
+    font-weight: bolder;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: aliceblue;
+    border-radius: 7px;
+    margin-left: 43vw;
+    margin-top: 40px;
+
+
+}
+
+#SignOut button {
+    background-color: rgba(211, 0, 0, 0.961);
+    width: 90px;
+    height: 30px;
+    font-weight: bolder;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: aliceblue;
+    margin-left: 51vw;
+    margin-bottom: 2px;
+    position: relative;
+    bottom: 30px;
+    border-radius: 7px;
+}
+
+#Proceed button:hover,#SignOut button:hover  {
+    background-color:darkturquoise;
+    color:brown;
+    transform:translateY(-5px);
+    box-shadow: 2px 2px 2px 2px gray;
+}
